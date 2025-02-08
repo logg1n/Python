@@ -1,2 +1,0 @@
-KEY = "FlQq4QuDR90kuxBlHB"
-SECRET = "JwhvzcjPS3uXVxt7G2AUdOfDXV0ONwo1ROg0"
