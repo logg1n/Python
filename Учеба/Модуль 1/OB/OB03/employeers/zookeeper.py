@@ -1,4 +1,4 @@
-from employee import Employee
+from .employee import Employee
 
 
 class ZooKeeper(Employee):
@@ -7,6 +7,3 @@ class ZooKeeper(Employee):
 
     def work(self):
         print(f"{self.name} is feeding the animals.")
-
-    def __repr__(self):
-        return f"{self.__class__.__name__} {self.name} age = {self.age}"
