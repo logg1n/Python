@@ -1,0 +1,65 @@
+# Сгенерированные файлы и папки
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Файлы IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Локальные настройки и среда
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.spec
+
+# Файлы журналов и БД
+*.log
+*.sqlite
+*.db
+
+# Ресурсы игры (если не хранятся в репозитории)
+/assets/compiled/
+*.pyxel
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Pygame кэш (если используется)
+*.pygame_cache
+
+# Скомпилированные ассеты
+*.pyc
+*.pyo
+
+# Временные файлы
+*.tmp
+*.bak
