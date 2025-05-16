@@ -11,9 +11,8 @@ load_dotenv()
 
 
 class BybitTradingClient:
-   def __init__(self, timeframe: str, limit: int = 1000):
-      self.limit = limit
-      self.timeframe = timeframe
+   def __init__(self):
+      self.limit = 1000
       self.__api_key = os.getenv("DEMO_API_KEY")
       self.__secret_key = os.getenv("DEMO_SECRET_KEY")
       self._endpoint = os.getenv("ENDPOINT")
@@ -25,18 +24,19 @@ class BybitTradingClient:
    def get_historical_data(
            self,
            symbol: str,
+           timeframe: str,
            start: int ,
    ) -> pd.DataFrame:
       """Получение и обработка исторических данных
       args: start -> The start timestamp (ms)
-      args: stop ->The start timestamp (ms)
+      args: stop ->The stop timestamp (ms)
       args: interval -> 1,3,5,15,30,60,120,240,360,720,D,M,W
       """
       try:
          response = self.session.get_kline(
             category="linear",
             symbol=symbol,
-            interval=self.timeframe,
+            interval=timeframe,
             start=start,
             limit=self.limit
          )

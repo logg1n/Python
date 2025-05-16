@@ -1,3 +1,8 @@
+.env
+triangle.py
+*.pth
+data/
+
 # Игнорируем файлы, специфичные для Python
 __pycache__/
 *.py[cod]
