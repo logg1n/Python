@@ -87,7 +87,7 @@ class IndicatorManager:
 
       # Предотвращаем деление на ноль, заменяя нулевые значения на небольшое число или
       # применяя специальную логику.
-      rs = avg_gain / avg_loss.replace(to_replace=0, method='ffill')
+      rs = avg_gain / avg_loss.replace(0, np.nan).ffill().fillna(1)
       rsi = 100 - (100 / (1 + rs))
       # Если убытков никаких (avg_loss == 0), то устанавливаем RSI по правилу:
       # если есть приросты, то 100, если нет, то 50.

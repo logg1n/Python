@@ -48,15 +48,50 @@ def fetch_data(client: BybitTradingClient, cursor: Cursor, pair: str, tf: str):
 
 
 def save_to_file(data: pd.DataFrame, pair: str, tf: str):
-   filename = f"data/{pair}_{tf}.csv"
-   os.makedirs("data", exist_ok=True)
+   """
+   Сохраняет данные по пути: data/{пара}/{пара}_{tf}.csv
+   Пример: data/BTCUSDT/BTCUSDT_15m.csv
+   """
+   try:
+      # Создаем путь к директории
+      dir_path = Path("data") / pair
+      dir_path.mkdir(parents=True, exist_ok=True)
 
-   # Если файл существует, дописываем данные
-   if os.path.exists(filename):
-      data.to_csv(filename, mode='a', header=False, index=False)
-   else:
-      data.to_csv(filename, index=False)
-   print(f"Сохранено {len(data)} строк в {filename}")
+      # Формируем имя файла
+      filename = f"{pair}_{tf}.csv"
+      filepath = dir_path / filename
+
+      # Проверка входных данных
+      if not isinstance(data, pd.DataFrame) or data.empty:
+         print("Ошибка: Неверный формат данных или пустой DataFrame")
+         return
+
+      # Сохранение данных
+      if filepath.exists():
+         # Загрузка существующих данных
+         existing = pd.read_csv(filepath)
+
+         # Объединение и удаление дубликатов
+         combined = pd.concat([existing, data]).drop_duplicates(
+            subset=['timestamp'],
+            keep='last'
+         ).sort_values('timestamp')
+
+         # Сохраняем только если есть изменения
+         if len(combined) > len(existing):
+            combined.to_csv(filepath, index=False)
+            print(f"Обновлен файл: {filepath}")
+            print(f"Добавлено строк: {len(combined) - len(existing)}")
+            print(f"Всего строк: {len(combined)}")
+         else:
+            print("Нет новых данных для сохранения")
+      else:
+         data.to_csv(filepath, index=False)
+         print(f"Создан новый файл: {filepath}")
+         print(f"Сохранено строк: {len(data)}")
+
+   except Exception as e:
+      print(f"Критическая ошибка при сохранении: {str(e)}")
 
 
 def main():

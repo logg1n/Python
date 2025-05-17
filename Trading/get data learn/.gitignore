@@ -1,5 +1,5 @@
 .env
-triangle.py
+Patterns/triangle.py
 *.pth
 data/
 

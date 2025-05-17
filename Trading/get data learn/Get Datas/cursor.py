@@ -3,11 +3,10 @@ from typing import Dict, List
 
 
 class Cursor:
-
    def __init__(self, timeframe: str, date: str):
       self.limit: int = 1000
       self.timeframe = timeframe
-      self.curs = self.datetime_to_milliseconds(date)
+      self.curs = self.datetime_to_milliseconds(date, "%d.%m.%Y")
       self.time_intervals:  Dict[str, int] = {
          "1": 1,
          "3": 3,
@@ -24,18 +23,8 @@ class Cursor:
          "W": 10080  # 1 неделя (7 дней) = 10080 минут
       }
 
-   class Cursor:
-      def __init__(self, timeframe: str, date: str):
-         self.time_intervals = {
-            "1": 1, "3": 3, "5": 5, "15": 15, "30": 30,
-            "60": 60, "120": 120, "240": 240, "360": 360,
-            "720": 720, "D": 1440, "W": 10080, "M": 43200
-         }
-
-
-   def next_cursor(self):
-      interval_minutes = self.time_intervals.get(self.timeframe, 60)
-      self.curs += interval_minutes * 60 * 1000
+   def next_cursor(self) -> None:
+      self.curs = (self.curs + (self.time_intervals.get(self.timeframe) * self.limit) * 60 * 1000)
             
    def datetime_to_milliseconds(self, date_str: str, date_format: str = "%d.%m.%Y") -> int | None:
       """
