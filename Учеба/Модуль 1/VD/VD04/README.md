@@ -2,10 +2,8 @@
 
 ## 🎥 Демонстрация работы
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/logg1n/Python/blob/main/%D0%A3%D1%87%D0%B5%D0%B1%D0%B0/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%201/VD/VD04/VD04.mp4" type="video/mp4">
-  Ваш браузер не поддерживает видео тег.
-</video>
+[Смотреть видео](https://github.com/logg1n/Python/blob/main/%D0%A3%D1%87%D0%B5%D0%B1%D0%B0/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%201/VD/VD04/VD04.mp4)
+
 
 
 
