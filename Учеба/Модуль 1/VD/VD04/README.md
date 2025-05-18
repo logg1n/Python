@@ -2,7 +2,7 @@
 
 ## 🎥 Демонстрация работы
 
-[https://github.com/logg1n/Python/blob/main/%D0%A3%D1%87%D0%B5%D0%B1%D0%B0/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%201/VD/VD04/VD04.mp4]
+![https://github.com/logg1n/Python/blob/main/%D0%A3%D1%87%D0%B5%D0%B1%D0%B0/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%201/VD/VD04/VD04.mp4]
 
 
 Реализация двух учебных заданий на Flask с динамическим временем и многостраничным сайтом.
