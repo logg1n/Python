@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Time</title>
+    <script>
+        function updateTime() {
+            fetch('/get_time')
+                .then(response => response.text())
+                .then(time => {
+                    document.getElementById('current-time').innerText = time;
+                });
+        }
+
+        // Обновляем время каждую секунду
+        setInterval(updateTime, 1000);
+
+        // Инициализация при загрузке
+        window.onload = updateTime;
+    </script>
+</head>
+<body>
+    <h1>Текущие дата и время:</h1>
+    <p id="current-time">Загрузка...</p>
+</body>
+</html>

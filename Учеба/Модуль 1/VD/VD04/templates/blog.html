@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Блог Dragon Realm{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">✧ Новости Dragon Realm ✧</h1>
+    
+    <div class="row">
+        <!-- Пост 1 -->
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark text-white">
+                <img src="https://masterpiecer-images.s3.yandex.net/5fdeda133c54972:upscaled" class="card-img-top" alt="Новый рейд">
+                <div class="card-body">
+                    <h3 class="card-title">🔥 Новый рейд "Логово Дракона"</h3>
+                    <p class="card-text">Сразитесь с древним драконом Ашардоном в эпическом 20-игровом рейде! Доступно с 15 июня.</p>
+                    <p class="text-muted">Опубликовано: 10.06.2023</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Пост 2 -->
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark text-white">
+                <img src="https://drako.ru/shared/images/u/Gefeor_big.jpg" class="card-img-top" alt="Система крафта">
+                <div class="card-body">
+                    <h3 class="card-title">🛠 Обновление системы крафта</h3>
+                    <p class="card-text">Добавлено 150+ новых рецептов и улучшена система прокачки профессий.</p>
+                    <p class="text-muted">Опубликовано: 05.06.2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

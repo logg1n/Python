@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты Dragon Realm{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">🐉 Свяжитесь с нами</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card bg-dark text-white mb-4">
+                <div class="card-body">
+                    <h3><i class="fas fa-headset me-2"></i>Техническая поддержка</h3>
+                    <p>Email: <a href="mailto:support@dragonrealm.com" class="text-warning">support@dragonrealm.com</a></p>
+                    <p>Телефон: +7 (900) 123-45-67</p>
+                    <p>Режим работы: 24/7</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card bg-dark text-white mb-4">
+                <div class="card-body">
+                    <h3><i class="fas fa-users me-2"></i>Социальные сети</h3>
+                    <div class="social-links mt-3">
+                        <a href="#" class="btn btn-outline-primary me-2 mb-2"><i class="fab fa-vk"></i> VK</a>
+                        <a href="#" class="btn btn-outline-info me-2 mb-2"><i class="fab fa-telegram"></i> Telegram</a>
+                        <a href="#" class="btn btn-outline-danger me-2 mb-2"><i class="fab fa-youtube"></i> YouTube</a>
+                        <a href="#" class="btn btn-outline-secondary mb-2"><i class="fab fa-discord"></i> Discord</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-dark text-white">
+        <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt me-2"></i>Наш офис</h3>
+            <p>Адрес: г. Москва, ул. Фэнтезийная, 13</p>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&lang=ru_RU" 
+                        width="100%" height="400" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
