@@ -1,0 +1,43 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Описание вашего сайта">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="{{ url_for('index') }}" id="mainBtn" class="nav-link">Главная</a></li>
+            <li><a href="{{ url_for('about') }}" id="aboutBtn" class="nav-link">О нас</a></li>
+        </ul>
+    </nav>
+
+    <div id="effectsContainer"></div>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-block">
+            <h3>Мы в соцсетях</h3>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><img src="{{ url_for('static', filename='images/instagram-icon.svg') }}" alt="Instagram"></a>
+                <a href="#" aria-label="Telegram"><img src="{{ url_for('static', filename='images/telegram-icon.svg') }}" alt="Telegram"></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Название компании. Все права защищены.</p>
+            <a href="/privacy">Политика конфиденциальности</a>
+        </div>
+    </footer>
+</body>
+</html>
