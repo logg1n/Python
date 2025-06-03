@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена (404)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .error-message {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .error-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .home-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .home-link:hover {
+            background-color: #ff4757;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 80px;
+            }
+            .error-message {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-message">Ой! Страница не найдена</h1>
+        <p class="error-description">
+            Похоже, мы не можем найти страницу, которую вы ищете.<br>
+            Возможно, она была перемещена или удалена.
+        </p>
+        <a href="{{ url_for('index') }}" class="home-link">На главную</a>
+    </div>
+</body>
+</html>

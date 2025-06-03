@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% for item in menu if item.url != '/' %}
+                <li><a href="{{item.url}}">{{ item.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Добро пожаловать на мой сайт!</h1>
+        <p>Это главная страница Flask-приложения.</p>
+        <p>Пример ссылки на профиль: <a href="{{ url_for('profile', username='admin') }}">Профиль admin</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Мой сайт</p>
+    </footer>
+</body>
+</html>
