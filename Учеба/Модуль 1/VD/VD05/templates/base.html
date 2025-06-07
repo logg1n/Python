@@ -14,8 +14,14 @@
 <body>
     <nav>
         <ul class="menu">
-            <li><a href="{{ url_for('index') }}" id="mainBtn" class="nav-link">Главная</a></li>
+            <li><a href="{{ url_for('quotes') }}" id="mainBtn" class="nav-link">Главная</a></li>
             <li><a href="{{ url_for('about') }}" id="aboutBtn" class="nav-link">О нас</a></li>
+            {% if 'userLogged' not in session %}
+            <li><a href="{{ url_for('auth') }}" id="quoteBtn" class="nav-link">Авторизоваться</a></li>
+            {% endif %}
+            {% if 'userLogged' in session %}
+            <li><a href="{{ url_for('logout') }}" class="nav-link">Выйти</a></li>
+            {% endif %}
         </ul>
     </nav>
 

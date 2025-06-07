@@ -1,0 +1,36 @@
+<!-- auth.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="btn-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('auth') }}" class="feedback-form">
+        <div class="form-group">
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <!-- Для формы входа -->
+        <button type="submit" name="sign-in" class="btn" value="1">Войти</button>
+        <br>
+        <!-- Для формы регистрации -->
+        <button type="submit" name="sign-up" class="btn" value="1">Зарегистрироваться</button>
+    </form>
+</div>
+{% endblock %}

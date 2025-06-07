@@ -1,0 +1,20 @@
+<!-- about.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="profile-card">
+  <div class="profile-header">
+    <div class="avatar-frame">
+      <img src="https://via.placeholder.com/150" alt="Аватар пользователя" class="avatar">
+    </div>
+    <h2 class="username">{{ login }}</h2>
+  </div>
+
+  <div class="profile-actions">
+      <a href="/change-username" class="btn change-name">Сменить имя</a>
+      <a href="/change-password" class="btn change-password">Сменить пароль</a>
+  </div>
+</div>
+
+{% endblock %}

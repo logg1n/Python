@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="feedback-form">
+    <h2>Смена имени пользователя</h2>
+    <form action="/change-username" method="POST">
+        <div class="form-group">
+            <label for="new-username">Новый логин</label>
+            <input type="text" id="new-username" name="new_username" placeholder="Введите новый логин" required>
+        </div>
+        <button type="submit" class="btn">Сменить имя пользователя</button>
+    </form>
+</div>
+
+{% endblock %}

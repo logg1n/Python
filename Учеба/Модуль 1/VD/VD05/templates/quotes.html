@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Добавьте этот код в ваш шаблон (например, quotes.html) -->
+<div class="quote-card">
+    <div class="quote-content">
+        <blockquote class="quote-text">
+            {{ quote if quote else "Цитата не найдена" }}
+        </blockquote>
+        <cite class="quote-author">
+            — {{ author if quote and author else "Неизвестный автор" }}
+        </cite>
+    </div>
+    <div class="quote-actions">
+        <a href='/' class="quote-btn new-quote">Новая цитата</a>
+        <a class="quote-btn share-quote">Поделиться</a>
+    </div>
+</div>
+
+{% endblock %}

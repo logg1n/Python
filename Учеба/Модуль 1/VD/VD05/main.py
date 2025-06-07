@@ -1,16 +1,26 @@
-# main.py
+from flask import Flask, session, g
 
-from flask import Flask, render_template
+from users_model import db  # Импортируем db из моделей
+from routes import init_routes
 
-app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('home.html', title="Главная")
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object('config.Config')
 
-@app.route('/about')
-def about():
-    return render_template('about.html', title="О нас")
+    # Инициализация базы данных
+    db.init_app(app)
+
+    # Импорт и инициализация маршрутов
+    init_routes(app, db)
+
+    # Создание таблиц
+    with app.app_context():
+        db.create_all()
+
+    return app
 
 if __name__ == '__main__':
-    app.run()
+    app = create_app()
+    app.run(debug=True)
+
