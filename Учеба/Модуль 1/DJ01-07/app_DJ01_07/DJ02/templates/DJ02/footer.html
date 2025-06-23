@@ -1,0 +1,23 @@
+{% load static %}
+
+{% block footer %}
+<footer class="site-footer">
+    <div class="footer-block">
+        <h3>Мы в соцсетях</h3>
+        <div class="social-links">
+            <!-- Используем тег static для правильных путей -->
+
+            <a href="#" aria-label="Instagram">
+                <img src="{% static 'images/instagram-icon.svg' %}" alt="Instagram">
+            </a>
+            <a href="#" aria-label="Telegram">
+                <img src="{% static 'images/telegram-icon.svg' %}" alt="Telegram">
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© {% now "Y" %} Название компании. Все права защищены.</p>
+        <a href="/privacy">Политика конфиденциальности</a>
+    </div>
+</footer>
+{% endblock %}
