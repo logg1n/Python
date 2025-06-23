@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Добро пожаловать в Movie Project!</h1>
+    <p class="lead">Система для управления вашей коллекцией фильмов</p>
+    <hr class="my-4">
+    <p>Добавляйте фильмы, оставляйте отзывы и делитесь своей коллекцией</p>
+    <div class="d-grid gap-3 d-md-flex justify-content-center mt-4">
+        <a href="{% url 'add_film' %}" class="btn btn-primary btn-lg px-4">Добавить фильм</a>
+        <a href="{% url 'film_list' %}" class="btn btn-outline-primary btn-lg px-4">Смотреть все фильмы</a>
+    </div>
+</div>
+{% endblock %}
