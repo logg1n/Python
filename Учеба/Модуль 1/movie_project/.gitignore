@@ -1,0 +1,85 @@
+# Игнорировать файлы базы данных SQLite
+*.sqlite3
+*.db
+*.sqlite
+
+# Игнорировать файлы окружения
+.env
+.env.local
+.env.*.local
+secrets.json
+
+# Игнорировать виртуальное окружение Python
+.venv/
+venv/
+env/
+ENV/
+
+# Игнорировать кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Игнорировать файлы IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Игнорировать статические файлы в сборе
+staticfiles/
+static/
+
+# Игнорировать медиа файлы
+media/
+
+# Игнорировать файлы пакетов
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Игнорировать файлы установки
+pip-delete-this-directory.txt
+pip-log.txt
+
+# Игнорировать файлы кэша и журналы
+*.log
+*.pot
+*.pyc
+cache/
+*.cache
+
+# Игнорировать файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# Игнорировать файлы покрытия тестами
+.coverage
+htmlcov/
+.coverage.*
+.pytest_cache/
+
+# Игнорировать Jupyter ноутбуки
+.ipynb_checkpoints
+
+# Игнорировать файлы миграций (кроме __init__.py)
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Игнорировать конфигурационные файлы
+settings/local.py
+
+# Игнорировать файлы документации
+docs/_build/

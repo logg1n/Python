@@ -1,0 +1,44 @@
+{% extends 'DJ02/base.html' %}
+
+{% block content %}
+<section class="about-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">О нашей компании</h2>
+                <div class="about-content">
+                    <p class="lead">Мы - команда профессионалов, создающая качественные решения с 2010 года.</p>
+                    
+                    <p>Наша миссия - помогать клиентам достигать их целей с помощью современных технологий 
+                    и индивидуального подхода к каждому проекту.</p>
+                    
+                    <div class="features mt-4">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="feature-item p-3 border rounded">
+                                    <h5>10+ лет</h5>
+                                    <p>Успешной работы на рынке</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="feature-item p-3 border rounded">
+                                    <h5>500+</h5>
+                                    <p>Довольных клиентов</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="feature-item p-3 border rounded">
+                                    <h5>24/7</h5>
+                                    <p>Поддержка клиентов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="{% url 'feedback' %}" class="btn btn-primary mt-3">Связаться с нами</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

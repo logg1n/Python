@@ -1,0 +1,33 @@
+{% extends 'DJ02/base.html' %}
+
+{% block content %}
+<div class="news-container">
+    {% if news %}
+        {% for new in news %}
+        <div class="news-item card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">{{ new.title }}</h3>
+                <div class="news-meta">
+                    <span class="badge bg-secondary">{{ new.user }}</span>
+                    <span class="text-muted">{{ new.date|date:"d E Y в H:i" }}</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-subtitle mb-2 text-muted">{{ new.short_description }}</h5>
+                <p class="card-text">{{ new.text }}</p>
+            </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-info">
+            На данный момент новостей нет.
+        </div>
+        {% endfor %}
+    {% else %}
+         <div class="news-item card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">{{ new.title }}</h3>
+            </div>
+         </div>
+    {% endif %}
+</div>
+{% endblock %}
