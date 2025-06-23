@@ -1,0 +1,96 @@
+{% extends 'DJ02/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="bi bi-newspaper"></i> Добавить новую новость</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" class="needs-validation" novalidate>
+                        {% csrf_token %}
+
+                        <!-- Вывод общих ошибок формы -->
+                        {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Поле "Название новости" -->
+                        <div class="mb-3">
+                            <label for="{{ form.title.id_for_label }}" class="form-label">
+                                Название новости*
+                            </label>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.title.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Поле "Обозреватель" -->
+                        <div class="mb-3">
+                            <label for="{{ form.user.id_for_label }}" class="form-label">
+                                Обозреватель*
+                            </label>
+                            {{ form.user }}
+                            {% if form.user.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.user.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Поле "Краткое описание" -->
+                        <div class="mb-3">
+                            <label for="{{ form.short_description.id_for_label }}" class="form-label">
+                                Краткое описание*
+                            </label>
+                            {{ form.short_description }}
+                            <div class="form-text">Максимум 200 символов</div>
+                            {% if form.short_description.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.short_description.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Поле "Текст новости" -->
+                        <div class="mb-4">
+                            <label for="{{ form.text.id_for_label }}" class="form-label">
+                                Текст новости*
+                            </label>
+                            {{ form.text }}
+                            {% if form.text.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.text.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-send"></i> Опубликовать
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
