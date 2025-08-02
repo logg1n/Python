@@ -1,0 +1,5 @@
+aiogram
+getenv
+dotenv
+aiohttp
+requests
